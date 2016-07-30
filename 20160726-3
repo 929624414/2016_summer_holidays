@@ -1,0 +1,44 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+class product
+{
+char* tag;
+double price;
+int quantity;
+public:
+product(char *a,double b,int c)
+{
+    tag=a;
+    price=b;
+    quantity=c;
+}
+~product(){}
+bool buy(int a)
+{
+    if(quantity-a>0)
+    {
+        quantity-=a;
+        cout<<"-$"<<a*price<<endl;
+        return true;
+    }
+    else
+        return false;
+}
+
+void tzkc(int a)
+{quantity=a;}
+void display()
+{cout<<"quantity:"<<quantity<<endl;}
+};
+int main()
+{
+    product ss("baozi",10,100);
+    ss.buy(3);
+    ss.tzkc(50);
+    ss.display();
+    return 0;
+}
+
+
+
